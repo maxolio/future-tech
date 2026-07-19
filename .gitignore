@@ -1,0 +1,12 @@
+# Настройки среды разработки (JetBrains WebStorm / PhpStorm)
+.idea/
+
+# Снимки кода Repomix
+repomix-output.xml
+
+# Будущие зависимости Node.js
+node_modules/
+
+# Системные файлы
+.DS_Store
+Thumbs.db

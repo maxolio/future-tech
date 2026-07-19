@@ -1,0 +1,23 @@
+{
+  "name": "future-tech",
+  "version": "1.0.0",
+  "description": "Адаптивный многофункциональный веб-сайт (блог-платформа), посвященный технологическим трендам, подкастам, видеообзорам и аналитическим отчетам. Проект создан для портфолио с целью демонстрации навыков построения сложной семантической разметки, работы с большим объемом медиаконтента, адаптивного дизайна и реализации интерактивных интерфейсов.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-watch": "sass --watch ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxolio/future-tech.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxolio/future-tech/issues"
+  },
+  "homepage": "https://github.com/maxolio/future-tech#readme",
+  "devDependencies": {
+    "sass": "^1.101.0"
+  }
+}

@@ -1,2 +1,27 @@
+# Системные директории
+.git/
+.idea/
+node_modules/
+
+# Файлы вывода Repomix
 repomix-output.xml
+repomix-output.txt
+
+# Шрифты (бинарные файлы)
+fonts/
+*.woff
+*.woff2
+
+# Изображения (кроме SVG, если они понадобятся как код)
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.ico
+*.svg
+*.mp4
+
+# Системные файлы ОС
 .DS_Store
+Thumbs.db

@@ -1,6 +1,8 @@
 @use "../helpers" as*;
 
 :root {
+  --header-promo-height: 0px;
+
   --color-light: #fff;
 
   --color-dark-08: #141414;
@@ -14,6 +16,8 @@
 
   --color-accent: #FFD11A;
   --color-red: #F50;
+
+  --border: #{rem(1)} solid var(--color-dark-15);
 
   --font-family-base: 'Inter';
   --font-family-accent: 'Kumbh Sans';

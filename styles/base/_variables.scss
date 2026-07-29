@@ -17,6 +17,8 @@
   --color-accent: #FFD11A;
   --color-red: #F50;
 
+  --gradientBadge: linear-gradient(45deg, var(--color-dark-15) 50%, var(--color-accent) 136%) border-box;
+
   --border: #{rem(1)} solid var(--color-dark-15);
 
   --font-family-base: 'Inter';

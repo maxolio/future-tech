@@ -1,0 +1,25 @@
+@use "../helpers" as *;
+
+.soc1a1s {
+  &__list {
+    display: flex;
+    align-items: center;
+    column-gap: rem(14);
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__link {
+    --iconSize: #{rem(24)};
+
+    @include square(var(--iconSize));
+
+    color: var(--color-light);
+
+    @include mobile {
+      --iconSize: #{rem(20)};
+    }
+  }
+}

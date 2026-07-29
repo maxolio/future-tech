@@ -53,17 +53,6 @@ $mobile-s: 480.98;
   }
 }
 
-@mixin laptop-above {
-  @media (width > rem($laptop)) {
-    @content;
-  }
-}
-
-@mixin laptop {
-  @media (width <= rem($laptop)) {
-    @content;
-  }
-}
 
 @mixin hover($hasActiveEffectOnMobile: true) {
   @media (any-hover: hover) {

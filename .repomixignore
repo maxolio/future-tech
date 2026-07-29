@@ -1,18 +1,27 @@
-# Системные директории
+# Системные директории и кэш
 .git/
 .idea/
 node_modules/
+dist/
+build/
+.cache/
 
-# Файлы вывода Repomix
+# Файлы вывода и конфиг Repomix
 repomix-output.xml
 repomix-output.txt
+repomix.config.json
 
-# Шрифты (бинарные файлы)
+# Папки медиа и шрифтов
 fonts/
+icons/
+images/
+
+# Бинарные файлы и шрифты
 *.woff
 *.woff2
-
-# Изображения (кроме SVG, если они понадобятся как код)
+*.ttf
+*.eot
+*.otf
 *.png
 *.jpg
 *.jpeg
@@ -22,6 +31,17 @@ fonts/
 *.svg
 *.mp4
 
+# Lock-файлы зависимостей
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
 # Системные файлы ОС
 .DS_Store
 Thumbs.db
+
+# Скомпилированные CSS и CSS-карты
+*.css
+*.map
+main.css
+*.css.map

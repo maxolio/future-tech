@@ -34,4 +34,8 @@
       background-color: var(--color-dark-08);
     }
   }
+
+  &--footer {
+    padding: fluid(10, 8) fluid(16, 14);
+  }
 }

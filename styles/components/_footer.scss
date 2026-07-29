@@ -1,0 +1,91 @@
+@use "../helpers" as *;
+
+.footer {
+  color: var(--color-dark-40);
+
+  &__body {
+    padding-block: fluid(80, 40);
+    border-bottom: var(--border);
+  }
+
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: start;
+    column-gap: fluid(80, 20);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(20);
+
+    }
+
+    &-column {
+      display: grid;
+      row-gap: fluid(35, 16);
+
+      @include tablet {
+        &:last-child {
+          grid-column: 1 / -1;
+
+          .footer__menu-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            column-gap: rem(12);
+          }
+        }
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: fluid(18, 8);
+
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      column-gap: rem(8);
+    }
+  }
+
+
+
+
+  &__extra {
+    padding-block: fluid(40, 24);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: rem(1);
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: rem(10);
+    }
+
+    &-menu {
+      &-list {
+        display: flex;
+      }
+
+      &-item {
+        &:not(:last-child) {
+          &:after {
+            content: '|';
+            margin-inline: rem(11);
+          }
+        }
+      }
+    }
+  }
+
+  &__soc1a1s {
+    @include mobile {
+      order: -1;
+    }
+  }
+
+}

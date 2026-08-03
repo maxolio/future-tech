@@ -1,0 +1,162 @@
+@use "../helpers" as *;
+
+.hero {
+  &__main {
+    @include tablet-above {
+      display: grid;
+      grid-template-columns: 60% auto;
+      grid-template-areas:
+    'body resources-preview'
+    'metrics resources-preview';
+    }
+  }
+
+  &__body {
+    grid-area: body;
+    padding-top: rem(150);
+    padding-right: rem(50);
+    padding-bottom: rem(100);
+
+    @include laptop {
+      padding-top: rem(100);
+      padding-right: rem(40);
+      padding-bottom: rem(100);
+    }
+
+    @include  tablet {
+      padding-right: 0;
+      padding-top: rem(40);
+      padding-bottom: rem(30);
+    }
+  }
+
+  &__subtitle {
+    @include fluid-text(30, 18);
+
+    font-family: var(--font-family-accent), sans-serif;
+    font-weight: 500;
+    color: var(--color-dark-40);
+
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+
+      @include laptop {
+        margin-bottom: rem(20);
+      }
+
+      @include mobile {
+        margin-bottom: rem(10);
+      }
+    }
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+
+      @include laptop {
+        margin-bottom: rem(14);
+      }
+
+      @include mobile {
+        margin-bottom: rem(10);
+      }
+    }
+  }
+
+  &__metrics {
+    grid-area: metrics;
+
+    @include tablet-above {
+      border-top: var(--border);
+    }
+
+    @include tablet {
+      &::before {
+        width: 100vw;
+        right: calc(var(--container-padding-x) * -1);
+      }
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__item {
+
+    }
+  }
+
+  &__resources-preview {
+    grid-area: resources-preview;
+
+    padding-bottom: rem(80);
+    border-left: var(--border);
+    background: /* linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),*/
+      url("../../images/resources-preview/bg.png") 0 0/cover no-repeat;
+
+    @include laptop {
+      padding-left: rem(50);
+      padding-bottom: rem(50);
+    }
+
+    @include tablet-above {
+      padding-left: rem(80);
+    }
+
+    @include tablet {
+      width: 100vw;
+      margin-left: calc(var(--container-padding-x) * -1);
+      padding: rem(100) rem(40) rem(40);
+      background-size: contain;
+    }
+  }
+
+  &__advantages {
+    --columnGapRightAdvantageCard: #{fluid(160, 30)};
+
+    border-block: var(--border);
+    margin-bottom: rem(20);
+
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      @include tablet-above {
+        column-gap: var(--columnGapRightAdvantageCard);
+      }
+
+      @include tablet {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+      &-item {
+        @include tablet-above {
+          position: relative;
+
+          &:not(:last-child) {
+            &::after {
+              position: absolute;
+              content: "";
+              height: 100%;
+              width: rem(1);
+              background-color: var(--color-dark-15);
+              top: 0;
+              left: calc(100% + (var(--columnGapRightAdvantageCard) / 2));
+            }
+          }
+        }
+
+        @include tablet {
+          border-bottom: var(--border);
+        }
+      }
+
+
+
+  }
+
+}

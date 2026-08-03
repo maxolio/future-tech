@@ -10,6 +10,13 @@
 @use "components/soc1a1s";
 @use "components/footer";
 
-//header {
+@use "components/metrics";
+@use "components/team";
+@use "components/rosoursces-preview";
+@use "components/advantage-card";
+@use "sections/hero";
+
+//header,
+//footer {
 //  display: none;
 //}

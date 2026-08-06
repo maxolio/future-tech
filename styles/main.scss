@@ -16,7 +16,20 @@
 @use "components/advantage-card";
 @use "sections/hero";
 
-//header,
+@use "components/tag";
+@use "sections/section";
+@use "components/list";
+@use "components/tile";
+@use "components/card";
+
+//.header,
 //footer {
 //  display: none;
+//}
+//
+//
+//section {
+//  &:not(:last-child) {
+//    display: none;
+//  }
 //}

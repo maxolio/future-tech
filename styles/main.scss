@@ -22,6 +22,11 @@
 @use "components/tile";
 @use "components/card";
 
+@use "sections/tabs";
+@use "components/person-card";
+@use "components/blog-action";
+@use "components/blog-card";
+
 //.header,
 //footer {
 //  display: none;

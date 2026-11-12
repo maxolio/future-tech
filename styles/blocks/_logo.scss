@@ -1,0 +1,6 @@
+@use "../helpers" as *;
+
+.logo {
+  width: fluid(179, 125);
+  flex-shrink: 0;
+}

@@ -1,0 +1,146 @@
+@use "../helpers" as *;
+
+.bordered-grid {
+  /* 1. БАЗОВЫЕ ПЕРЕМЕННЫЕ */
+  --columns: 1;
+  --itemPaddingY: #{fluid(80, 40)};
+
+  /* 2. СЕТКА */
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  /* 3. МОДИФИКАТОР 2 КОЛОНКИ */
+  &--2-cols {
+    --columns: 2;
+  }
+
+  /* 4. МОДИФИКАТОР 3 КОЛОНКИ */
+  &--3-cols {
+    --columns: 3;
+    --itemPaddingX: #{rem(100)};
+
+    column-gap: var(--itemPaddingX);
+
+    @include laptop {
+      --itemPaddingX: #{rem(80)};
+    }
+
+    /* МИР ДЕСКТОПА: сетка 3x2 с перекрёстными линиями */
+    @include tablet-above {
+      .bordered-grid__item {
+        /* Вертикальные разделители (1, 2, 4, 5) */
+        &:not(:nth-child(3n)) {
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: calc(100% + var(--itemPaddingX) / 2);
+            width: rem(1);
+            height: 100%;
+            background-color: var(--color-dark-40);
+          }
+        }
+
+        /* Горизонтальная линия под 1-м рядом */
+        &:first-child {
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100vw;
+            width: 300vw;
+            height: rem(1);
+            background-color: var(--color-dark-40);
+          }
+        }
+      }
+    }
+
+    /* МИР ПЛАНШЕТА И МОБИЛКИ: 1 колонка с линиями между карточками */
+    @include tablet {
+      --columns: 1;
+
+      .bordered-grid__item {
+        &:not(:last-child) {
+          border-bottom: var(--border);
+        }
+      }
+    }
+  }
+
+  /* 5. БАЗОВЫЙ ЭЛЕМЕНТ (общий для всех вариантов сетки!) */
+  &__item {
+    position: relative;
+    padding-block: var(--itemPaddingY);
+  }
+}
+
+/*
+.bordered-grid {
+  --columns: 1;
+  --itemPaddingY: #{fluid(80, 40)};
+
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  &--2-cols {
+    --columns: 2;
+  }
+
+  &--3-cols {
+    --columns: 3;
+    --itemPaddingX: #{rem(100)};
+
+    column-gap: var(--itemPaddingX);
+
+    @include laptop {
+      --itemPaddingX: #{rem(80)};
+    }
+
+    @include tablet {
+      --columns: 1;
+    }
+
+    .bordered-grid__item {
+      position: relative;
+      padding-block: var(--itemPaddingY);
+
+      @include tablet-above {
+
+        &:not(:nth-child(3n)) {
+          // добавляем всем элементам кроме 3 и 6 линию разделитель
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: calc(100% + var(--itemPaddingX) / 2);
+            width: rem(1);
+            height: 100%;в
+            background-color: var(--color-dark-40);
+          }
+        }
+
+        &:first-child {
+          position: relative;
+          //добавляем и растягиваем линию первому элементу
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100vw;
+            width: 300vw;
+            height: rem(1);
+            background-color: var(--color-dark-40);
+          }
+        }
+      }
+
+      @include tablet {
+        &:not(:last-child) {
+          border-bottom: var(--border);
+        }
+      }
+    }
+  }
+}*/

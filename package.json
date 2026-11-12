@@ -1,0 +1,13 @@
+{
+  "name": "future-tech",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass-watch": "sass --watch .",
+    "start": "live-server"
+  },
+  "devDependencies": {
+    "sass": "^1.80.6"
+  }
+}

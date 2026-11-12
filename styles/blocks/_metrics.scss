@@ -1,0 +1,56 @@
+@use "../helpers" as *;
+
+.metrics {
+  --padingRight: #{rem(100)};
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--padingRight);
+
+    @include laptop {
+      --padingRight: #{rem(80)};
+    }
+
+    @include tablet {
+      --padingRight: #{rem(40)};
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-block: rem(50);
+
+    @include tablet-above {
+      row-gap: rem(10);
+    }
+
+    @include tablet {
+      padding-block: rem(20);
+    }
+
+    &:not(:last-child) {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: calc(100% + var(--padingRight) / 2);
+        width: rem(1);
+        height: 100%;
+        background-color: var(--color-dark-40);
+      }
+    }
+  }
+
+  &__value {
+    display: inline-flex;
+    column-gap: rem(5);
+    font-weight: 600;
+  }
+
+  &__sign {
+    color: var(--color-accent);
+  }
+}

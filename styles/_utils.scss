@@ -61,3 +61,33 @@
     }
   }
 }
+
+//круглая желтая иконка со стрелочкой
+.has-icon {
+  --circlSize: #{rem(52)};
+  --circlMarginLeft: #{rem(20)};
+
+  position: relative;
+  min-height: var(--circlSize);
+  padding-right: calc(var(--circlSize) + var(--circlMarginLeft));
+
+  @include laptop {
+    --circlSize: #{rem(44)};
+    --circlMarginLeft: #{rem(14)};
+  }
+
+  @include mobile {
+    --circlSize: #{rem(40)};
+    --circlMarginLeft: #{rem(14)};
+  }
+
+  &::after {
+    @include square(var(--circlSize));
+    @include abs-y;
+
+    content: '';
+    right: 0;
+    background: url("../../icons/arrow-top-right_black.svg") center no-repeat var(--color-accent);
+    border-radius: 50%;
+  }
+}

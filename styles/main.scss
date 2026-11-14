@@ -40,6 +40,13 @@
 @use "blocks/about-card";
 @use "blocks/about";
 
+//Страница News
+
+@use "blocks/hero-alt";
+@use "blocks/summary"; // Исправлена опечатка в имени файла (было blocks/summaru)
+@use "blocks/news-card";
+@use "blocks/news";
+
 .header,
 main > *:not(:last-child),
 .footer {

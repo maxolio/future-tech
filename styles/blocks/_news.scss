@@ -5,7 +5,8 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(rem(358), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(rem(358), 100%), 1fr));
+    //min(rem(358), 100%) означает: «держи минимум 358px, но если сам экран уже 358px не вылезай за 100%
     gap: rem(30);
   }
 }

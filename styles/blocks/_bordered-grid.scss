@@ -12,6 +12,55 @@
   /* 3. МОДИФИКАТОР 2 КОЛОНКИ */
   &--2-cols {
     --columns: 2;
+    --itemPaddingX: #{rem(160)};
+
+    column-gap: var(--itemPaddingX);
+
+    @include laptop {
+      --itemPaddingX: #{rem(100)};
+    }
+
+    @include tablet-above {
+      .bordered-grid__item {
+        /* Вертикальные разделители (1, 2, 4, 5) */
+        &:nth-child(odd) {
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: calc(100% + var(--itemPaddingX) / 2);
+            width: rem(1);
+            height: 100%;
+            background-color: var(--color-dark-40);
+          }
+        }
+
+        /* Горизонтальная линия под 1-м рядом */
+        &:first-child {
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100vw;
+            width: 300vw;
+            height: rem(1);
+            background-color: var(--color-dark-40);
+          }
+        }
+      }
+    }
+
+    /* МИР ПЛАНШЕТА И МОБИЛКИ: 1 колонка с линиями между карточками */
+    @include tablet {
+      --columns: 1;
+
+      .bordered-grid__item {
+        &:not(:last-child) {
+          border-bottom: var(--border);
+        }
+      }
+    }
+
   }
 
   /* 4. МОДИФИКАТОР 3 КОЛОНКИ */

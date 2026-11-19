@@ -4,6 +4,9 @@
 @use "utils";
 @use "globals";
 
+//перенесли что бы перебило стили
+@use "blocks/expandable-content";
+
 @use "blocks/icon";
 @use "blocks/logo";
 @use "blocks/button";
@@ -49,6 +52,10 @@
 
 @use "blocks/video-player";
 @use "blocks/video-card";
+
+@use "blocks/table-of-contents";
+@use "blocks/blog-details";
+
 
 .header,
 main > *:not(:last-child),
